@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container {
+    background-color: black;
+    border-bottom: 8px solid silver;
+    color: white;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+    padding: 10px 12%;
+    flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+}
+
+.container_start {
+    flex: 1; /* Flexible width */
+    text-align: left;
+}
+
+.container_end {
+    flex: 1; /* Flexible width */
+    display: flex; /* Flexbox for aligning items */
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center; /* Vertically center content */
+    gap: 10px; /* Add spacing between icons */
+}
+
+.nav_icon {
+    width: 16%;
+    min-width: 50px; /* Set a minimum width for responsiveness */
+    margin: 16px 0;
+    border-radius: 50%;
+}
+
+.nav_elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+}
+
+.nav_content {
+    text-decoration: none; /* Remove underline */
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease; /* Add hover effect */
+}
+
+.nav_content:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.logo {
+    width: 40px; /* Set a fixed size for icons */
+    height: 40px; /* Ensure icons are square */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+footer .container {
+    border-top: 8px solid silver;
+}
+
+footer .container_start {
+    text-align: left;
+    font-size: 16px;
+}
+
+footer .container_end {
+    justify-content: flex-end; /* Align icons to the right */
+}
+.content_block{
+    background-color: white;
+}
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+    .container_start, .container_end {
+        flex: none;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .nav_icon {
+        width: 20%;
+    }
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+    .nav_content {
+        font-size: 18px;
+    }
+}

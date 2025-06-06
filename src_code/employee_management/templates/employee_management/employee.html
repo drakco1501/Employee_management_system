@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+<div class="tbl_container"> 
+    <div class="tbl_action">
+        <a href="{% url 'employee:add_employee' %}">
+                <button class="add_btn" class="btn">Add</button>
+        </a>
+        {% if emp_count %}
+            <a href="{% url 'employee:all_employees' %}">
+                <button class="view_btn" class="btn">View All</button>
+            </a>
+        {% endif %}  
+    </div>   
+    <table class="emptable" >
+        <tr>
+            <th>SL-NO</th>
+            <th>Employee Name</th>
+            <th>Designation</th>
+            <th>Department</th>
+        </tr>
+
+        {% for employee in employees %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.designation }}</td>
+                <td>{{ employee.department }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock content %}

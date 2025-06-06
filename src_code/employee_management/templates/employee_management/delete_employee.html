@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div>
+    <br><br><br>
+</div>
+
+
+<div class="confirmation">
+    <div>
+        <br><br><br><br>
+    </div>
+
+    <h3>Confirm Deletion</h3>
+    <p>Are you sure you want to delete <strong>{{ employee.name }}</strong>?</p>
+    
+    <form method="post" action="{% url 'employee:delete_employee' employee.id %}">
+        {% csrf_token %}
+        <button type="submit" class="delete_btn" class="btn">Yes, Delete</button>
+        <a href="{% url 'employee:employees_alter' %}">
+            <button class="back_btn" class="btn">Cancel</button>   
+        </a>
+    </form>
+
+    <div>
+        <br><br><br><br>
+    </div>
+</div>
+
+<div>
+    <br><br><br>
+</div>
+{% endblock content %}
