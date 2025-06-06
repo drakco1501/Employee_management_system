@@ -3,7 +3,7 @@ The Employee Management System is a user-friendly web application designed to st
 
 #project sturcture
 
-src_code/                   # Main project folder
+src_code/                  # Main project folder
 │
 ├── myproj/            # Django project directory
 │   ├── __init__.py
