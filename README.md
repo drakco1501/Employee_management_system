@@ -65,9 +65,10 @@ src_code/                # Main project folder
 # How to Run Localhost
 
 1. move to src_code Directory : `cd hrms_project`
-2. Activate env: `my_env\scripts\activate`
-3. Install dependencies: `pip install -r requirement.txt`
-4. Set up the database: `python manage.py makemigrations`
+2. create virtual environment : `virtualenv my_env`
+3. Activate env: `my_env\scripts\activate`
+4. Install dependencies: `pip install -r requirement.txt`
+5. Set up the database: `python manage.py makemigrations`
                         `python manage.py migrate`
 
 
