@@ -1,0 +1,58 @@
+{% load static %}
+<style>
+/* Logout button container */
+.logout_btn {
+    margin-right: 15px;
+}
+
+/* Logout button style */
+.logout_btn a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff; /* White text */
+    background-color: #dc3545; /* Bootstrap's red danger color */
+    padding: 10px 15px;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.logout_btn a:hover {
+    background-color: #c82333; /* Slightly darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge */
+}
+
+/* Active/click effect */
+.logout_btn a:active {
+    background-color: #bd2130; /* Even darker red when clicked */
+    transform: scale(1); /* Reset scale */
+}
+</style>
+<nav>
+    <div class="container">
+        <!-- Logo on the left -->
+        <div class="container_start">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="Logo" class="nav_icon">
+            </a>
+        </div>
+        
+        <!-- Centered navigation elements -->
+        <div class="container_center">
+            <div class="nav_elements">
+                <a href="{% url 'home' %}" class="nav_content">Home</a>
+                <a href="{% url 'employee:emp_index' %}" class="nav_content">Employee</a>
+                <a href="{% url 'employee:add_employee' %}" class="nav_content">Add</a>
+                <a href="{% url 'employee:employees_alter' %}" class="nav_content">Alter</a>
+            </div>
+        </div>
+        
+        <!-- Logout button on the right -->
+        <div class="container_end">
+            <div class="logout_btn">
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>

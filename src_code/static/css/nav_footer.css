@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container {
+    background-color: black;
+    border-bottom: 8px solid silver;
+    color: white;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Distribute space between logo, nav, and logout */
+    align-items: center; /* Align items vertically */
+    padding: 10px 5%; /* Added margin on both sides by reducing padding */
+    margin: 0 3%; /* Added explicit margin on both sides */
+    flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+}
+
+.container_start {
+    flex: 0 0 auto; /* Don't grow or shrink, keep natural size */
+    text-align: left;
+}
+
+.container_center {
+    flex: 1; /* Take up remaining space and center */
+    display: flex;
+    justify-content: center; /* Center the nav elements */
+    align-items: center;
+}
+
+.nav_icon {
+    width: 50px; /* Fixed width for better control */
+    height: 50px; /* Fixed height to maintain aspect ratio */
+    min-width: 50px; /* Set a minimum width for responsiveness */
+    margin: 16px 0;
+    border-radius: 50%;
+}
+
+.nav_elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Increased gap for better spacing */
+}
+
+.nav_content {
+    text-decoration: none; /* Remove underline */
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease; /* Add hover effect */
+    font-weight: 500;
+}
+
+.nav_content:hover {
+    color: #007bff; /* Change color on hover */
+}
+.message{
+    font-size: 14px;
+}
+.logo {
+    width: 40px; /* Set a fixed size for icons */
+    height: 40px; /* Ensure icons are square */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+footer .container {
+    border-top: 8px solid silver;
+}
+
+footer .container_start {
+    text-align: left;
+    font-size: 16px;
+}
+
+footer .container_end {
+    justify-content: flex-end; /* Align icons to the right */
+}
+
+.content_block{
+    background-color: white;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px 2%;
+        margin: 0 1%;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .container_start, .container_center, .container_end {
+        flex: none;
+        text-align: center;
+        margin: 5px 0;
+    }
+    
+    .container_center {
+        order: 2; /* Place nav elements in middle */
+    }
+    
+    .container_end {
+        order: 3; /* Place logout button last */
+    }
+    
+    .nav_icon {
+        width: 40px;
+        height: 40px;
+        margin: 8px 0;
+    }
+    
+    .nav_elements {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .nav_content {
+        font-size: 18px;
+    }
+    
+}
