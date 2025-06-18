@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+<div class="tbl_container">
+    <div class="tbl_action">
+        <a href="{% url 'employee:add_employee' %}">
+                <button class="add_btn" class="btn">Add</button>
+        </a>
+        <a href="{% url 'employee:emp_index' %}">
+            <button class="back_btn" class="btn">back</button>
+        </a>
+    </div>
+    <table class="emptable" >
+        <tr>
+            <th>SL-NO</th>
+            <th>Employee Name</th>
+            <th>Designation</th>
+            <th>Department</th>
+        </tr>
+
+        {% for employee in employees %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.designation }}</td>
+                <td>{{ employee.department }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% endblock content %}

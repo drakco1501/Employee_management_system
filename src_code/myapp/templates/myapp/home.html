@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+    <div class="homecontainer">
+        <div class="section">
+            <div class="image">
+                <img src="{% static 'img/home_img1.png' %}" alt="Placeholder Image 1" class="img">
+            </div>
+            <div class="text">
+                <p>Our Employee Management Portal offers a seamless platform for managing employee details effortlessly. 
+                    Designed with simplicity and efficiency in mind, it provides an intuitive interface to add, 
+                    update, and delete employee information. This ensures that all your organizational data 
+                    remains up-to-date and organized. Whether you are a small business owner or managing a large
+                     enterprise, this solution simplifies employee data management like never before</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="image">
+                <img src="{% static 'img/home_img2.png' %}" alt="Placeholder Image 2" class="img">
+            </div>
+            <div class="text">
+                <p>With cutting-edge technology and user-friendly navigation, this standalone website is tailored 
+                    to streamline your administrative processes. The portal is equipped with robust features to 
+                    ensure data accuracy, security, and accessibility. Every action is crafted to be quick and efficient, 
+                    saving valuable time and effort while maintaining data integrity. You can trust the 
+                    platform to deliver a reliable and smooth experience for your workforce management needs.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="image">
+                <img src="{% static 'img/home_img3.png' %}" alt="Placeholder Image 3" class="img">
+            </div>
+            <div class="text">
+                <p>Join the next level of digital efficiency by using our Employee Management Portal. By centralizing 
+                    employee data, you empower your organization with better decision-making capabilities. This tool not 
+                    only enhances operational efficiency but also helps build a collaborative and organized work environment. 
+                    Experience the ease of managing employee information with this modern solution tailored for your needs!</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,46 @@
+          
+{% extends "main.html" %}
+
+{% block content %}
+<div class="tbl_container">
+    <div class="tbl_action">
+        <a href="{% url 'employee:emp_index' %}">
+            <button class="back_btn" class="btn">back</button>
+        </a>
+    </div>
+    <table class="emptable">
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Department</th>
+                <th>Date of Join</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.designation }}</td>
+                    <td>{{ employee.department }}</td>
+                    <td>{{ employee.date_of_joining|date:"M d, Y" }}</td>
+                    <td>
+                        <a href="{% url 'employee:update_employee' employee.id %}">
+                            <button class="update_btn" class="btn">Update</button>    
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'employee:delete_employee' employee.id %}">
+                            <button class="delete_btn" class="btn">Delete</button>    
+                        </a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td class="all_col">No employees found.</td>
+                </tr>
+            {% endfor %}
+    </table>
+</div>
+
+{% endblock content %}
+

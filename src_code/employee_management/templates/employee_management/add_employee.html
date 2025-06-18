@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="card-body">
+    <div class="div_heading">
+        <br>
+        <h5 class="card-title">Add Employee</h5><br>
+        <a href="{% url 'employee:emp_index' %}" class="back">
+            <button class="back_btn" class="btn">back</button>    
+        </a>
+    </div>
+    
+    <br>
+
+    {% if form.errors %}
+        <div class="alert-danger" role="alert">
+            Please correct the errors below.
+        </div>
+    {% endif %}
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="form_inp">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+            {% for error in form.name.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+        <div class="form_inp">
+            {{ form.designation.label_tag }}
+            {{ form.designation }}
+            {% for error in form.designation.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+        <div class="form_inp">
+            {{ form.department.label_tag }}
+            {{ form.department }}
+            {% for error in form.department.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+        <div class="form_inp">
+            {{ form.date_of_joining.label_tag }}
+            {{ form.date_of_joining }}
+            {% for error in form.date_of_joining.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn_submit" class="btn" >Submit</button>
+    </form>
+</div>
+     <br>       
+{% endblock %}
